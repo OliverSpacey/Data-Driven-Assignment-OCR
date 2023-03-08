@@ -1,0 +1,37 @@
+# Word Search assignment report
+
+[Replace the square-bracketed text with your own text. *Leave everything else unchanged.* 
+Note, the reports are parsed to check word limits, etc. Changing the format may cause 
+the parsing to fail.]
+
+## Feature Extraction (Max 200 Words)
+
+The feature extraction was done by using PCA with the constant N_DIMENSIONS as the dimension number, and 'data' as the data which needed reducing. It does this by finding the eigenvectors of the data - using a different function - and then using these to reduce the dimensions of the data to the number specified in N_DIMENSIONS. This is done by multiplying the data by the eigenvectors. Doing PCA reduction with the pre-determined eigenvectors ensures that the noise of each image is correctly reduced as well.
+
+
+## Letter Classifier (Max 200 Words)
+
+The classifier used a simple nearest neighbour classification system to assign each image a label. This was very easy to implement as we had done this classifier in lab 7, however I did not manage to implement the k-nearest neigbour variation in time. The classifier took training data and labels, and test data as parameters, and used these to establish which images were most likely linked to which labels according to the train data.
+
+## Word Finder (Max 200 Words)
+
+The word finder used a brute-force method to find the words. This was done by first looking through the list of words, and for each word looking at every position in the array of labels, checking every direction around it, and if there was a match for the word, adding the position of the word to the word_pos array.
+
+## Performance
+
+My percentage correctness scores (to 1 decimal place) for the development data are as follows.
+
+High quality data:
+
+- Percentage Letters Correct: 99.7%
+- Percentage Words Correct: 100%
+
+Low quality data:
+
+- Percentage Letters Correct: 51.7%
+- Percentage Words Correct: 11.1%
+
+## Other information (Optional, Max 100 words)
+
+[Optional: highlight any significant aspects of your system that are NOT covered in the
+sections above]
